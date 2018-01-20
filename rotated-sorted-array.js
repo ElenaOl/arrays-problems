@@ -6,24 +6,25 @@ var rotated = function(arr, num){
     
     while(si<=ei){
       mi= Math.floor((si+ei)/2);
+      console.log(si,mi,ei);
       if(arr[mi] === num){
-        return num;
+        return mi;
       }
-      if(arr[si]<arr[mi] && arr[mi]>num){
-          // console.log(arr[mi]);
-          ei = mi-1;
-      }else if(arr[si]>arr[mi]){
-        if(arr[mi]>num){
-          console.log(arr[mi]);
-          ei = mi-1;
+      if(arr[si]<arr[mi]){
+        if(arr[si]<=num && num<=arr[mi]){
+          ei=mi-1;
         }else{
-          si = mi+1;
+          si=mi+1;
+        }  
+      }else{  
+        if(arr[mi]<=num && arr[ei]>=num){
+         si=mi+1;
+        }else{
+          ei=mi-1;
         }
-      }else{
-        si = mi+1;
       }
-    }
+    }  
     return console.log('this number is not found');
-  }
+  };
   
   rotated([12,13,1,2,3,4,5,6,7,8,9,10,11], 13);
