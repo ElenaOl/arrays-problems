@@ -12,3 +12,18 @@ function atIndex (arr, num){
   return "not found";
 }
 atIndex([8, 7, 6, 7, 6, 5, 4, 3, 2, 3, 4, 3], 3);
+
+//8-3 = 5 5-3=2
+
+function atIndex (arr, num){
+  for(var i=0; i<arr.length; ){
+    if(arr[i] === num){
+      return "found at index " + i;
+    }
+    var diff = Math.abs(arr[i] - num);
+    i = i+diff; 
+  }
+  return "not found";
+}
+
+atIndex([8, 7, 6, 7, 6, 5, 4, 3, 2, 3, 4, 3], 3);
