@@ -7,23 +7,32 @@
 var arr = [1,3,4,15,5];
 var arr1 = [];
 var sum = 0;
-var max = arr[0];
+// var max = arr[0];
 function split(arr){
   for(var i=0; i<arr.length; i++){
     sum += arr[i];
   }
+  // for(var i=0; i<arr.length; i++){
+  //   if(arr[i] > max){
+  //     max = arr[i];
+  //     indexOfMax = i;
+  //   }
+  // }
+  // if(sum === 2*max){
+  //   arr1.push(max);
+  //   arr.splice(indexOfMax, 1);
+  //   return "the sum of n-1 is " + arr1 + " the n-1 elements are " + arr;
+  // }else{
+  //   return "there is no element that equals the sum of others found";
+  // }
   for(var i=0; i<arr.length; i++){
-    if(arr[i] > max){
-      max = arr[i];
-      indexOfMax = i;
+    if(arr[i] === sum/2){
+      arr1.push(arr[i]);
+      arr.splice(i, 1);
+      return "the sum of n-1 is " + arr1 + " the n-1 elements are " + arr;
+    }else{
+      return "there is no element that equals the sum of others found";
     }
-  }
-  if(sum === 2*max){
-    arr1.push(max);
-    arr.splice(indexOfMax, 1);
-    return "the sum of n-1 is " + arr1 + " the n-1 elements are " + arr;
-  }else{
-    return "there is no element that equals the sum of others found";
   }
 }
 split(arr);
@@ -31,6 +40,26 @@ split(arr);
 
 //can be negative numbers and the sum doesn't have to be the maximum number!!!!!
 
+var arr = [-1,1,-1,1,0];
+var arr1 = [];
+var sum = 0;
+// var max = arr[0];
+function split(arr){
+  for(var i=0; i<arr.length; i++){
+    sum += arr[i];
+    console.log(sum);
+  }
+  for(var j=0; j<arr.length; j++){
+    if(arr[j] === (sum/2)){
+      console.log(sum/2);
+      arr1.push(arr[j]);
+      arr.splice(j, 1);
+      return "the sum of n-1 is " + arr1 + " the n-1 elements are " + arr;
+    }
+  }
+  return "there is no element that equals the sum of others found"
+}
+split(arr);
 
 
 
