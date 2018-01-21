@@ -13,7 +13,7 @@ function atIndex (arr, num){
 }
 atIndex([8, 7, 6, 7, 6, 5, 4, 3, 2, 3, 4, 3], 3);
 
-//8-3 = 5 5-3=2
+//8-3 = 5 5-3=2, improvement to solve as n/2 solution
 
 function atIndex (arr, num){
   for(var i=0; i<arr.length; ){
