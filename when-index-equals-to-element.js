@@ -17,6 +17,7 @@ function magicIndex(arr){
       si=mi+1;
     }
   }
+  return "no magic index"
 }
 
 magicIndex([-4,1, 2, 4, 5, 6, 7, 8]);
