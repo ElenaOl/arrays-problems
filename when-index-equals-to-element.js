@@ -17,7 +17,23 @@ function magicIndex(arr){
       si=mi+1;
     }
   }
-  return "no magic index"
+  return Number.MIN_SAFE_INTEGER;
+}
+
+function magicIndex(arr, si, ei){
+  var mi = Math.floor((si+ei)/2);
+  if(arr[mi] === mi){
+    return mi;
+  }
+  if(si === ei){
+    return Number.MIN_SAFE_INTEGER;
+  }
+  if(arr[mi] > mi){
+    var res = magicIndex(arr, si, mi-1);
+  }else{
+   res = magicIndex(arr, mi+1, ei);
+  }
+  return res;
 }
 
 magicIndex([-4,1, 2, 4, 5, 6, 7, 8]);
